@@ -4,35 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp6
+namespace ConsoleApp3
 {
-    public class PrimeNo 
+    internal class Program
     {
-         public static void Main()
+        static bool isprfecet(int x)
         {
-            int count,low,high;
-            Console.WriteLine("Enter the lower range");
-            low = int .Parse(Console.ReadLine());
-            Console.WriteLine("Enter the high range");
-            high = int.Parse(Console.ReadLine());
-             
-            for (int num = low; num <= high; num++)
+            int sum = 0;
+            int number;
+            for (int i = 1; i < x; i++)
             {
-                count = 0;
-                for(int i = 2; i<=num/2; i++)
-                {
-                    if (num%i==0)
-                    {
-                        count++;
-                        break;
+                if (x % i == 0) sum = sum + i;
 
-                    }
-                }
-                if (count == 0 && num != 1)
-                    Console.WriteLine(num);
             }
-            Console.WriteLine("\n");
-            Console.ReadLine();
+            if (sum == x) return true;
+            return false;
+
+        }
+         static void Main(string[] args)
+        {
+            int y, z;
+            Console.WriteLine("enter the first number");
+            y = int.Parse(Console.ReadLine());
+            Console.WriteLine("enter the second number");
+            z = int.Parse(Console.ReadLine()); 
+
+            for(int i=y; i<=z; i++)
+            {
+                if (isprfecet(i)) Console.WriteLine("{0},", i);
+
+            }
+            Console.ReadKey();
+
 
 
 
@@ -40,5 +43,13 @@ namespace ConsoleApp6
         }
 
 
+
+
+
+
+
+
+
     }
-}
+    }
+
